@@ -1,0 +1,131 @@
+	/* стили для контейнера блоков */
+		#container {
+		  display: flex;
+		  justify-content: space-between;
+		  height: 500px;
+		  width: 100%;
+		  flex-direction: row-reverse;
+		}
+		
+	/* стили для каждого блока */
+	.block {
+	  height: 100%;
+	  width: calc(28.33% - 20px);
+	  max-width: 600px;
+	  background-color: #6b536b;
+	  transition: transform 0.5s, scale 0.5s, border-color 0.5s;
+	  cursor: pointer;
+	  border-radius: 15px;
+	  margin: 10px;
+	  position: relative;
+	  padding: 35px;
+	  opacity: 0.85;
+	  overflow: auto;
+	}
+
+	/* стили для наведения на блок */
+	.block:hover {
+	  transform: translateX(-10px);
+	  scale: 1.1;
+	  border-color: #444;
+	  z-index: 1;
+	  opacity: 1;
+	}
+
+	/* стили для заголовка блока */
+	.block h2 {
+	  color: #ffffff;
+	  font-size: 24px;
+	  margin: 10px;
+	  border-radius: 0;
+	  text-shadow: -1px -1px 0 #000,  
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
+	}
+
+	/* стили для разделителя */
+	.block hr {
+	  border: 1px solid #aaa;
+	  margin: 10px;
+	}
+
+	/* стили для описания блока */
+	.block p {
+	  color: #ffffff;
+	  margin: 10px;
+	  border-radius: 0;
+	  text-shadow: -1px -1px 0 #000,  
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
+	  font-size: large;
+	}
+
+	/* стили для кнопки */
+	.block button {
+	  position: absolute;
+	  bottom: 10px;
+	  right: 10px;
+	  margin: 10px;
+	  padding: 10px;
+	  background-color: #aaa;
+	  color: #fff;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 10px;
+	}
+
+	/* стили для скругления углов */
+	.block:hover h2,
+	.block:hover p{
+	  border-radius: 10px;
+	}
+
+	/* стили для затемнения других блоков */
+	#container:hover .block:not(:hover) {
+	  opacity: 0.3;
+	  transition: opacity 0.5s;
+	}
+	body {
+	background-image: url("{% static 'bg.gif' %}");
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+	.article {
+	position: absolute;
+	bottom: 0;
+	color: #ffffff;
+	padding: 5%;
+	}
+	#myTooltip {
+	display: none; /* скрываем элемент подсказки */
+	position: absolute; /* указываем, что элемент будет абсолютно позиционирован */
+	top: calc(100% + 5px); /* указываем отступ сверху */
+	left: 80%; /* указываем отступ слева */
+	background-color: #6b536b;
+	color: #ffffff;
+	opacity: 0; /* устанавливаем начальное значение прозрачности */
+  	transition: opacity 0.5s ease; /* добавляем анимацию для свойства opacity */
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3); /* добавляем тень */
+	z-index: 1; /* указываем z-index, чтобы элемент находился выше остальных элементов */
+	}
+	#myButton:hover + #myTooltip {
+	display: block;
+	}
+	.code_block {
+		font-family: monospace;
+		background-color: #000000;
+		border: 1px solid #ccc;
+		padding: 10px;
+		border-radius: 10px;
+	  }
+	  li {
+		color: white;
+		text-shadow: -1px -1px 0 #000,  
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
+	  }
